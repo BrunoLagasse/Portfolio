@@ -1,0 +1,167 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<section id="presentation" class="d-flex flex-column align-items-center justify-content-center presentation">
+        <h1 class="mb-4">Moi, c'est Bruno !</h1>
+        <h2>Je suis développeur Web</h2>
+    <div class="social-media">
+        <a href="mailto:brlagasse@gmail.com" target="_blank"><img src="{{ asset('build/logo_round_email.svg') }}" alt="logo email"></a>
+        <a href="https://github.com/BrunoLagasse" target="_blank"><img src="{{ asset('build/logo_round_github.svg') }}" alt="logo github"></a>
+        <a href="https://www.linkedin.com/in/bruno-lagasse-8a699716a/" target="_blank"><img src="{{ asset('build/logo_round_linkedin.svg') }}" alt="logo linkedin"></a>
+    </div>
+</section>
+
+<main id="main">
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+            <div class="row no-gutters">
+                <div class="image col-xl-5 d-flex"></div>
+                <div class="col-xl-7 pl-0 pl-lg-5 pr-lg-1 d-flex ">
+                    <div class="content d-flex flex-column justify-content-center py-3">
+                        <h2>Qui suis-je ?</h2>
+                        <p>Passionné d'informatique depuis toujours j'ai décidé d'en faire mon métier.</p>
+                        <p>J'ai donc complété mes connaissances, acquises lors de mon temps libre,
+                            en intégrant une formation de Développeur web et web mobile PHP/Symfony.</p>
+                        
+                        <div class="row">
+                            <div class="d-md-flex mx-3">
+                                <div class="count-box py-4 w-100">
+                                    <p><strong>Diplômes obtenus</strong> :</p>
+                                        <ul>
+                                            <li><img class="diplome" src="{{ asset('build/diplome.png') }}"/>1 Titre d'Etat (niveau Bac+2) "Développeur web et web mobile" - en cours d'obtention</li>
+                                            <br>
+                                            <li><img class="diplome" src="{{ asset('build/diplome.png') }}"/>1 Certificat d'aptitude professionnelle</li>
+                                        </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container" data-aos="fade-up">
+            <h2>Compétences</h2>
+            <div class="row d-flex justify-content-between">
+                <div class="technologies p-5 col-sm-12 col-xl-6" data-aos="zoom-in" data-aos-delay="100">
+                    <h3>Technologies</h3>
+                    <span class="badge badge-pill badge-coral">PHP</span>
+                    <span class="badge badge-pill badge-coral">Symfony</span>
+                    <span class="badge badge-pill badge-coral">HTML 5</span>
+                    <span class="badge badge-pill badge-coral">CSS 3</span>
+                    <span class="badge badge-pill badge-coral">SCSS</span>
+                    <span class="badge badge-pill badge-coral">Bootstrap</span>
+                    <span class="badge badge-pill badge-coral">MySQL/SQL</span>
+                    <span class="badge badge-pill badge-coral">PHPUnit</span>
+                    <span class="badge badge-pill badge-coral">GIT/GitHub</span>
+                    <h3 class="mt-5 mb-3">Outils</h3>
+                    <span class="badge badge-pill badge-grey">Visual Studio Code</span>
+                    <span class="badge badge-pill badge-grey">Univers Linux/Windows</span>
+                </div>
+                <div class="softskills p-5 col-sm-12 col-xl-6" data-aos="zoom-in" data-aos-delay="100">
+                    <h3>Soft Skills</h3>
+                    <ul class="p-0">
+                        <li class="list-inline mb-4">
+                            <strong> Consciencieux </strong> : je fais preuve de discipline dans les missions que j'entreprends.
+                            Je suis appliqué, constant et professionnel. Je prends soin de mener les tâches qui me sont confiés jusqu'à leurs finalités.
+                        </li>
+                        <li class="list-inline mb-4">
+                            <strong>Constamment</strong> dans l'optique de progresser</strong>. Je suis capable de m'auto-former en planifiant
+                            des objectifs à atteindre et en me remettant en question continuellement.
+                            Je fais preuve de curiosité, d'autonomie et de rigueur.</li>
+                        <li class="list-inline mb-4">
+                            <strong> Optimiste </strong>: je fais preuve d'optimisme face aux changements et je fais en sorte de voir le bon
+                            côté de chaque situation. Je me concentre également sur les qualités des personnes avec lesquelles j'échange.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <div class="container" data-aos="fade-up">
+            <h2>Projets</h2>
+            {# LISTE DES PROJETS #}
+{% include 'projet/index.html.twig'%}
+    </div>
+    <section id="experience" class="experience section-bg">
+        <div class="container" data-aos="fade-up">
+
+                <h2>Expériences professionnelles</h2>
+                <br>
+                <p class="mb-5">J'ai eu la chance de pouvoir travailler dans des domaines très variés. Voici quelques-unes de mes expériences professionnelles : </p>
+
+            <div class="row">
+                <div class="col-lg-12 mb-5">
+                    <div class="company d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="row">
+                            <div class="logo col-lg-2 d-none d-lg-block"><img src="{{ asset('build/logo_wild.png') }}" class="img-fluid" alt="logo wild code school"></div>
+                            <div class="company-info pl-3 col-lg-9">
+                                <h3 class="experience-title mb-3">Développeur web et web mobile - PHP / Symfony - En formation</h3>
+                                <span><em>Wild Code School de REIMS . Septembre 2020 / Février 2021</em></span>
+                                <p><strong>Réalisation de 3 projets : </strong></p>
+                                    <ul>
+                                        <li><a href="#projects">Projet 3: (client réel) application web d'organisation d'évenement et de soirée</a></li>
+                                        <li><a href="#projects">Projet 2 : sur le thème du cinéma</a></li>
+                                        <li>Projet de début de formation : réalisation d'un site web statique sur le thème de Burger Quiz (HTML5, CSS3).</li>
+                                    </ul>
+                                <p>
+                                    <strong>2 Hackathons :</strong> 24h pour Saint-Ex (REIMS) (1er prix du jury) et 48h en collaboration avec WiziFarm.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 mb-5">
+                    <div class="company d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="row">
+                            <div class="logo col-lg-2 d-none d-lg-block"><img src="{{ asset('build/Quick.png') }}" class="img-fluid" alt="logo Quick"></div>
+                            <div class="company-info pl-3 col-lg-9">
+                                <h3 class="experience-title mb-3">Expérience Restauration Rapide</h3>
+                                <span><em>Mars 2019 / Septembre 2020</em></span>
+                                <p><strong>Equipier polyvalent</strong> LOREM IPSUM ... .</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 mb-5">
+                    <div class="company d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="row">
+                            <div class="logo col-lg-2 d-none d-lg-block"><img src="{{ asset('build/Logo_Carrefour.svg.png') }}" class="rounded float-left" alt="logo Carrefour"></div>
+                            <div class="company-info pl-3 col-lg-9">
+                                <h3 class="experience-title mb-3">Commis Boucher</h3>
+                                <span><em>Septembre 2013</em></span>
+                                <p><strong>Apprentis boucher</strong> LOREM IPSUM... .</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer id="footer">
+    <div class="container">
+        <div class="social-media">
+            <a href="mailto:brlagasse@gmail.com" target="_blank"><img src="{{ asset('build/logo_round_email.svg') }}" alt="icon mail"></a>
+            <a href="https://github.com/BrunoLagasse" target="_blank"><img src="{{ asset('build/logo_round_github.svg') }}" alt="logo github"></a>
+            <a href="https://www.linkedin.com/in/bruno-lagasse-8a699716a/" target="_blank"><img src="{{ asset('build/logo_round_linkedin.svg') }}" alt="logo linkedin"></a>
+        </div>
+    </div>
+    <div class="admin">
+        <a class="admin-space" href="{{ path('app_login') }}">Espace Administrateur</a>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+<script src="assets/js/main.js"></script>
+{% endblock %}

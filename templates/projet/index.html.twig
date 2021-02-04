@@ -1,0 +1,32 @@
+{% block body %}
+        <section id="projects" class="projects">
+        <div class="container" data-aos="fade-up">
+            <div class="row mt-5">
+            {% for projet in projets %}
+                <div class="col-lg-4 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#projectModalOne">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                </div>
+                            </div>
+                             <img class="img-fluid" src="{{ asset('/uploads/' ~ projet.picture) }}" alt="capture d'écran du site" /> 
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-title"><a style="text-decoration:none;"href="{{ path('projet_show', {id: projet.id}) }}">{{ projet.name }}</a></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <p>Aucun projet trouvé</p>
+            {% endfor %}
+            </div>
+             {% if app.user %}
+                 <a href="{{ path('projet_new') }}">Ajoutez en un nouveau</a>
+             {% else %}
+
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}

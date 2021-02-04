@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projet{% endblock %}
+
+{% block body %}
+    <h1>Projet</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ projet.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ projet.name }}</td>
+            </tr>
+            <tr>
+                <th>image</th>
+                <img src="{{ asset('/uploads/' ~ projet.picture) }}"/>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('projet_index') }}">Retour à la liste</a>
+
+    <a href="{{ path('projet_edit', {'id': projet.id}) }}">éditer</a>
+
+    {{ include('projet/_delete_form.html.twig') }}
+{% endblock %}
