@@ -1,7 +1,10 @@
 # My Portfolio!
 
 This repository is a Portfolio for my others web sites and web applications
-
+![alt text](https://i.ibb.co/jkFs964/Accueil.png)
+![alt text](https://i.ibb.co/7NDMrYq/Competences.png) 
+![alt text](https://i.ibb.co/6tKx0cS/Exp-riences.png)
+![alt text](https://i.ibb.co/f8nt4gR/Projets.png)
 
 # Duration
 2 days
@@ -48,13 +51,12 @@ This project is for my 'Checkpoint 4' for the Wild Code School.
 5. The route for categorie index(add, edit, delete) and project (add, edit, delete) is not assigned to a link in the home page.
 
 ## Wireframes
-
-1. https://zupimages.net/viewer.php?id=21/05/jvx4.png
-2. https://zupimages.net/viewer.php?id=21/05/ycwh.png
-3. https://zupimages.net/viewer.php?id=21/05/q2ux.png
+![alt text](https://www.zupimages.net/up/21/05/jvx4.png)
+![alt text](https://www.zupimages.net/up/21/05/ycwh.png)
+![alt text](https://www.zupimages.net/up/21/05/q2ux.png)
 
 ## MCD
 
-https://zupimages.net/viewer.php?id=21/05/w8su.png
+![alt text](https://www.zupimages.net/up/21/05/w8su.png)
 
 
