@@ -28,9 +28,9 @@
                                 <div class="count-box py-4 w-100">
                                     <p><strong>Diplômes obtenus</strong> :</p>
                                         <ul>
-                                            <li><img class="diplome" src="{{ asset('build/diplome.png') }}"/>1 Titre d'Etat (niveau Bac+2) "Développeur web et web mobile" - en cours d'obtention</li>
+                                            <li><img class="diplome" src="{{ asset('build/diplome.png') }}"/>&nbsp;Titre d'Etat (niveau Bac+2) "Développeur web et web mobile"</li>
                                             <br>
-                                            <li><img class="diplome" src="{{ asset('build/diplome.png') }}"/>1 Certificat d'aptitude professionnelle</li>
+                                            <li><img class="diplome" src="{{ asset('build/diplome.png') }}"/>&nbsp;Certificat d'aptitude professionnelle</li>
                                         </ul>
                                 </div>
                             </div>
@@ -108,7 +108,7 @@
                                         <li>Projet de début de formation : réalisation d'un site web statique sur le thème de Burger Quiz (HTML5, CSS3).</li>
                                     </ul>
                                 <p>
-                                    <strong>2 Hackathons :</strong> 24h pour Saint-Ex (REIMS) (1er prix du jury) et 48h en collaboration avec WiziFarm.
+                                    <strong>2 Hackathons :</strong> 24h pour Saint-Ex (REIMS) (<b>1er prix du jury</b>) et 48h en collaboration avec WiziFarm.
                                 </p>
                             </div>
                         </div>
@@ -151,9 +151,11 @@
             <a href="https://www.linkedin.com/in/bruno-lagasse-8a699716a/" target="_blank"><img src="{{ asset('build/logo_round_linkedin.svg') }}" alt="logo linkedin"></a>
         </div>
     </div>
+    {% if app.user %}
     <div class="admin">
         <a class="admin-space" href="{{ path('app_login') }}">Espace Administrateur</a>
     </div>
+    {% endif %}
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
