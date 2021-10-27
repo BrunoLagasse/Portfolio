@@ -1,13 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Editer un Projet{% endblock %}
+{% block title %}Éditer un Projet{% endblock %}
 
 {% block body %}
-    <h1>Editer un Projet</h1>
+    <h1>Éditer un <span style="color: #F78F96;">Projet</span></h1>
+    {{ include('projet/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-    {{ include('projet/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('projet_index') }}">Retour à la liste</a>
+    <a href="{{ path('home') }}#projects" class="d-flex justify-content-center"><button class="btn btn-primary">Retour à la liste</button></a>
 
     {{ include('projet/_delete_form.html.twig') }}
 {% endblock %}

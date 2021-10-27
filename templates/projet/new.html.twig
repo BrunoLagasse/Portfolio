@@ -3,9 +3,9 @@
 {% block title %}Nouveau projet{% endblock %}
 
 {% block body %}
-    <h1>Ajouter un nouveau projet</h1>
+    <h1 class="d-flex justify-content-center">Ajouter un nouveau&nbsp;<span style="color: #F78F96;">projet</span></h1>
 
     {{ include('projet/_form.html.twig') }}
 
-    <a href="{{ path('projet_index') }}">Retour à la liste</a>
+    <a href="{{ path('home') }}#projects" class="d-flex justify-content-center"><button class="btn btn-success">Retour à la liste</button></a>
 {% endblock %}

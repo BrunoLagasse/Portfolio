@@ -431,22 +431,22 @@ section {
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.12);
 }
 
-#footer .social-media{
+#footer .social-media {
     text-align: center;
     margin: 20px 0 50px;
 }
 
-#footer .social-media img{
+#footer .social-media img {
     height: 50px;
     margin: 0 20px;
 }
 
-.admin-space{
+.admin-space {
     font-size: 1.2em;
     color: #131c3a;
 }
 
-.admin{
+.admin {
     display: flex;
     justify-content: center;
 }

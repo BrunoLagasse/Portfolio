@@ -6,6 +6,8 @@ use App\Repository\CategorieRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ProjetRepository;
+use App\Entity\Projet;
 
 /**
  * @ORM\Entity(repositoryClass=CategorieRepository::class)
@@ -25,18 +27,14 @@ class Categorie
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\ManyToMany(targetEntity=Projet::class, mappedBy="technologie")
      */
-    private $tech;
-
-    /**
-     * @ORM\OneToMany(targetEntity=Projet::class, mappedBy="tech")
-     */
-    private $projets;
+    private $projet;
 
     public function __construct()
     {
         $this->projets = new ArrayCollection();
+        $this->projet = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -56,31 +54,11 @@ class Categorie
         return $this;
     }
 
-    public function getTech(): ?string
-    {
-        return $this->tech;
-    }
-
-    public function setTech(?string $tech): self
-    {
-        $this->tech = $tech;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Projet[]
-     */
-    public function getProjets(): Collection
-    {
-        return $this->projets;
-    }
-
     public function addProjet(Projet $projet): self
     {
         if (!$this->projets->contains($projet)) {
             $this->projets[] = $projet;
-            $projet->setTech($this);
+            $projet->setTechnologie($this);
         }
 
         return $this;
@@ -90,11 +68,23 @@ class Categorie
     {
         if ($this->projets->removeElement($projet)) {
             // set the owning side to null (unless already changed)
-            if ($projet->getTech() === $this) {
-                $projet->setTech(null);
+            if ($projet->getTechnologie() === $this) {
+                $projet->setTechnologie(null);
             }
         }
 
         return $this;
+    }
+
+    /**
+     * @return Collection|Projet[]
+     */
+    public function getProjet(): Collection
+    {
+        return $this->projet;
+    }
+    
+    public function __toString() {
+        return $this->name;
     }
 }

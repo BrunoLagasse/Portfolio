@@ -1,16 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Categorie index{% endblock %}
+{% block title %}Liste des technologie{% endblock %}
 
 {% block body %}
-    <h1>Categorie index</h1>
+    <h1>Listes des technologies :</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th>Tech</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -19,19 +18,18 @@
             <tr>
                 <td>{{ categorie.id }}</td>
                 <td>{{ categorie.name }}</td>
-                <td>{{ categorie.tech }}</td>
                 <td>
-                    <a href="{{ path('categorie_show', {'id': categorie.id}) }}">show</a>
-                    <a href="{{ path('categorie_edit', {'id': categorie.id}) }}">edit</a>
+                    <a href="{{ path('categorie_show', {'id': categorie.id}) }}">Voir</a>
+                    <a href="{{ path('categorie_edit', {'id': categorie.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">Aucune technologie trouvée...</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('categorie_new') }}">Create new</a>
+    <a href="{{ path('categorie_new') }}">Ajouter une technologie</a>
 {% endblock %}

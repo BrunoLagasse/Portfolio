@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ProjetRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -23,11 +25,6 @@ class Projet
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Categorie::class, inversedBy="projets")
-     */
-    private $tech;
-
-    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $picture;
@@ -36,6 +33,16 @@ class Projet
      * @ORM\Column(type="text", nullable=true)
      */
     private $description;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Categorie::class, inversedBy="projet")
+     */
+    private $technologie;
+
+    public function __construct()
+    {
+        $this->technologie = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -50,18 +57,6 @@ class Projet
     public function setName(string $name): self
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    public function getTech(): ?Categorie
-    {
-        return $this->tech;
-    }
-
-    public function setTech(?Categorie $tech): self
-    {
-        $this->tech = $tech;
 
         return $this;
     }
@@ -86,6 +81,30 @@ class Projet
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Categorie[]
+     */
+    public function getTechnologie(): Collection
+    {
+        return $this->technologie;
+    }
+
+    public function addTechnologie(Categorie $technologie): self
+    {
+        if (!$this->technologie->contains($technologie)) {
+            $this->technologie[] = $technologie;
+        }
+
+        return $this;
+    }
+
+    public function removeTechnologie(Categorie $technologie): self
+    {
+        $this->technologie->removeElement($technologie);
 
         return $this;
     }

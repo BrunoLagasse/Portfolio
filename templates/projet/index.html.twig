@@ -5,7 +5,7 @@
             {% for projet in projets %}
                 <div class="col-lg-4 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
                     <div class="portfolio-item">
-                        <a class="portfolio-link" data-toggle="modal" href="#projectModalOne">
+                        <a class="portfolio-link" href="{{ path('projet_show', {id: projet.id}) }}">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content">
                                 </div>

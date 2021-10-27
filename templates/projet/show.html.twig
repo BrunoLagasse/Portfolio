@@ -5,17 +5,26 @@
 {% block body %}
     <h1 class="d-flex justify-content-center">Projet :<span class="project_title">&nbsp;{{projet.name}}</span></h1>
 
-    <p>Aperçu</p>
-    <img src="{{ asset('/uploads/' ~ projet.picture) }}"/>
+    <p class="d-flex justify-content-center">Aperçu : </p>
+    <img class="rounded mx-auto d-block" src="{{ asset('/uploads/' ~ projet.picture) }}"/>
 
     <p class="d-flex justify-content-center">Technologies utilisées :</p>
 
+    <div class="tech-contenair d-flex justify-content-center">
+    {% for projet in projet.technologie %}
+    <span class="badge badge-pill badge-coral">{{ projet }}</span>
+    {% endfor %}
+    </div>
+
+    <p class="d-flex justify-content-center">Description : </p>
+    <p class="d-flex justify-content-center">{{projet.description}}</p>
 
     {% if app.user %}
-    <a href="{{ path('projet_index') }}"><button type="button" class="btn btn-primary">Retour à la liste</button></a>
 
-    <a href="{{ path('projet_edit', {'id': projet.id}) }}"><button type="button" class="btn btn-success">Editer</button></a>
+    <a class="d-flex justify-content-center" href="{{ path('projet_edit', {'id': projet.id}) }}"><button type="button" class="btn btn-success">Éditer</button></a>
 
     {{ include('projet/_delete_form.html.twig') }}
     {% endif %}
+
+    <a href="{{ path('home') }}#projects" class="d-flex justify-content-center"><button type="button" class="btn btn-success">Retour à la liste des projets</button></a>
 {% endblock %}

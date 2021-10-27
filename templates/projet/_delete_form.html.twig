@@ -1,4 +1,4 @@
-<form method="post" action="{{ path('projet_delete', {'id': projet.id}) }}" onsubmit="return confirm('Etes vous sûr de vouloir supprimer ce projet ?');">
+<form class="d-flex justify-content-center" method="post" action="{{ path('projet_delete', {'id': projet.id}) }}" onsubmit="return confirm('Etes-vous sûr de vouloir supprimer ce projet ?');">
     <input type="hidden" name="_method" value="DELETE">
     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ projet.id) }}">
     <button class="btn btn-danger" style="color: white;" class="btn">Supprimer</button>

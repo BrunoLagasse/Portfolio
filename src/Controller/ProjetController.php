@@ -4,13 +4,13 @@ namespace App\Controller;
 
 use App\Entity\Projet;
 use App\Form\ProjetType;
+use App\Repository\CategorieRepository;
 use App\Repository\ProjetRepository;
 use App\Service\FileUploader;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
 
 /**
  * @Route("/projet")
@@ -49,7 +49,7 @@ class ProjetController extends AbstractController
             $entityManager->persist($projet);
             $entityManager->flush();
 
-            return $this->redirectToRoute('projet_index');
+            return $this->redirectToRoute('home');
         }
 
         return $this->render('projet/new.html.twig', [
@@ -63,7 +63,7 @@ class ProjetController extends AbstractController
      */
     public function show(Projet $projet): Response
     {
-        return $this->render('projet/show.html.twig', [
+            return $this->render('projet/show.html.twig', [
             'projet' => $projet,
         ]);
     }
