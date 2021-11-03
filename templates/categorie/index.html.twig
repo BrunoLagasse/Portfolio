@@ -3,14 +3,14 @@
 {% block title %}Liste des technologie{% endblock %}
 
 {% block body %}
-    <h1>Listes des technologies :</h1>
+    <h1 class="d-flex justify-content-center">Listes des technologies :</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
+                <th>Nom</th>
+                <th class="d-flex justify-content-center">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -18,9 +18,9 @@
             <tr>
                 <td>{{ categorie.id }}</td>
                 <td>{{ categorie.name }}</td>
-                <td>
-                    <a href="{{ path('categorie_show', {'id': categorie.id}) }}">Voir</a>
-                    <a href="{{ path('categorie_edit', {'id': categorie.id}) }}">Modifier</a>
+                <td class="d-flex justify-content-center">
+                    <a class="btn btn-primary" href="{{ path('categorie_show', {'id': categorie.id}) }}">Voir</a>
+                    <a class="btn btn-primary" href="{{ path('categorie_edit', {'id': categorie.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}

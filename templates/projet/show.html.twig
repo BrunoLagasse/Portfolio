@@ -6,9 +6,10 @@
     <h1 class="d-flex justify-content-center">Projet :<span class="project_title">&nbsp;{{projet.name}}</span></h1>
 
     <p class="d-flex justify-content-center">Aperçu : </p>
-    <img class="rounded mx-auto d-block" src="{{ asset('/uploads/' ~ projet.picture) }}"/>
-
-    <p class="d-flex justify-content-center">Technologies utilisées :</p>
+    <div class="container">   
+        <img class="img-fluid" src="{{ asset('/uploads/' ~ projet.picture) }}"/>
+    </div>
+    <p class="d-flex justify-content-center mt-3">Technologies utilisées :</p>
 
     <div class="tech-contenair d-flex justify-content-center">
     {% for projet in projet.technologie %}
@@ -17,7 +18,7 @@
     </div>
 
     <p class="d-flex justify-content-center">Description : </p>
-    <p class="d-flex justify-content-center">{{projet.description}}</p>
+    <p class="d-flex justify-content-center container-fluid">{{projet.description}}</p>
 
     {% if app.user %}
 

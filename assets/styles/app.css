@@ -254,7 +254,20 @@ section {
     width: 2rem;
     height: 2rem;
 }
-
+.download-link {
+    text-align: center; 
+    color: white; 
+    font-family: sans-serif; 
+    font-weight: fantasy; 
+    width: 15%; 
+    border-radius: 76px; 
+    background: #e0e0e0; 
+    box-shadow:  5px 5px 10px #8d8d8d, 5px -5px 10px #ffffff; 
+    text-decoration: none;
+}
+.download-link:hover {
+    color: yellow;
+  }
 @media (max-width: 991px) {
     .about .image img {
         max-width: 80%;
@@ -449,4 +462,39 @@ section {
 .admin {
     display: flex;
     justify-content: center;
+}
+
+/* Download button */
+@import "https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css";
+a:link{text-decoration:none}
+.vn-red a{
+  background-color:#e74c3c;
+  display:inline-block;
+  position:relative;
+  margin:30px 5px;
+  padding:20px 20px 20px 80px;
+  color:#fff;
+  transition:all 0.4s ease
+}
+
+.vn-red a:before{
+  content:"\f019";
+  font-family:fontAwesome;
+  position:absolute;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  font-size:28px;
+  border-radius:0 20px 0 0;
+  color:#000;
+  background-color:#fff;
+  opacity:0.3;
+  padding:12px;
+  top:0;
+  text-align: center;
+  left:0
+}
+
+.vn-red a:hover{
+  background:#2c3e50
 }

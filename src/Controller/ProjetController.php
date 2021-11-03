@@ -11,13 +11,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
+ * 
  * @Route("/projet")
  */
 class ProjetController extends AbstractController
 {
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/", name="projet_index", methods={"GET"})
      */
     public function index(ProjetRepository $projetRepository): Response
@@ -30,6 +34,7 @@ class ProjetController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/new", name="projet_new", methods={"GET","POST"})
      */
     public function new(Request $request, FileUploader $fileUploader): Response
@@ -69,6 +74,7 @@ class ProjetController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}/edit", name="projet_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Projet $projet, FileUploader $fileUploader): Response
@@ -95,6 +101,7 @@ class ProjetController extends AbstractController
     }
 
     /**
+     * @IsGranted("ROLE_ADMIN")
      * @Route("/{id}", name="projet_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Projet $projet): Response
