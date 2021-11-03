@@ -6,12 +6,8 @@ This repository is a Portfolio for my others web sites and web applications
 ![alt text](https://i.ibb.co/6tKx0cS/Exp-riences.png)
 ![alt text](https://i.ibb.co/f8nt4gR/Projets.png)
 
-# Duration
-2 days
-
-
 # Description
-This project is for my 'Checkpoint 4' for the Wild Code School.
+This is my portfolio.
 
 
 # Developper:
